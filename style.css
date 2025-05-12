@@ -69,7 +69,28 @@ p {
   border-bottom: 4px solid #1e1e1e;
   position: absolute;
   width: 100%;
+
+  z-index: 9;
 }
+
+/* header scroll event */
+.header_area.scrollEvent {
+  position: fixed;
+  height: auto;
+
+  animation: headerscroll 0.3s linear;
+}
+
+@keyframes headerscroll {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------------- */
 
 .header_area .menu,
 .header_area .icons {
@@ -298,13 +319,14 @@ p {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
+
   top: 0;
   left: 0;
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
-  z-index: 9;
+  z-index: 99;
 }
 
 .sub_menu.show {
